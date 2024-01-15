@@ -15,7 +15,6 @@ The basic commands follow those of RWKV-infctx-trainer
 
 Examples of training commands can be found in 01-test.sh, so please make changes as needed.
 
-i dont know why validation loss is corrupted, 
 I'd be happy if I could improve it, whether it's a fork or a pull request.
 
 This repo works
@@ -45,7 +44,7 @@ python3 lightning_trainer.py fit -c config.yaml
 ```
 - 2.merge
 ```sh
- python export_checkpoint_lora.py --checkpoint_dir %DEEPSPEED_CHECKPOINT_DIR% --output_file %LoRA_MERGED_Checkpoint_Dir% --base_model model/RWKV-5-World-3B-v2-20231113-ctx4096.pth --lora_alpha 32
+ python export_checkpoint_lora.py --checkpoint_dir %DEEPSPEED_CHECKPOINT_DIR% --output_file %LoRA_MERGED_Checkpoint_Dir% --base_model model/RWKV-5-World-3B-v2-20231113-ctx4096.pth --lora_alpha 32 --r 1 --k 1 --v 1
 ```
 
 i tested it on RTX4090 Cuda12.2
