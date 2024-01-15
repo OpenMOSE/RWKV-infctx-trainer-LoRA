@@ -15,12 +15,12 @@ i dont know why validation loss is corrupted,
 I'd be happy if I could improve it, whether it's a fork or a pull request.
 
 This repo works
- 1.Add LoRA Layer to Receptance,Key,Value each att and ffn.
- 2.Training with DeepSpeed
- 3.out deepspeed checkpoint with LoRA layer.
- 4.Convert to Pytorch Checkpoint
- 5.Extract LoRA Layer and Merge to original Checkpoint
- 6.Maybe LoRA merged and working??
+-  1.Add LoRA Layer to Receptance,Key,Value each att and ffn.
+-  2.Training with DeepSpeed
+-  3.out deepspeed checkpoint with LoRA layer.
+-  4.Convert to Pytorch Checkpoint
+-  5.Extract LoRA Layer and Merge to original Checkpoint
+-  6.Maybe LoRA merged and working??
  
 
 Training Steps
