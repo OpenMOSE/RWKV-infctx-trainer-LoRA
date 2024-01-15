@@ -3,7 +3,11 @@ This repo is forked from RWKV-infctx-trainer
 # RWKV-5.2 Infctx LoRA Experiment Project RWKV-infctx-trainer-LoRA
 
 I added the LoRA training function to the original repository. 
+
+
 This is really experiment repo.
+
+
 Somehow I feel like I'm training well, but I'm not sure.
 
 
@@ -24,7 +28,9 @@ This repo works
  
 
 Training Steps
- 0.Edit Configs.
+-  0.Edit Configs.
+
+
  if change lora_r and alpha
  edit like this on config yaml.
  
