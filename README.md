@@ -28,7 +28,7 @@ This repo works
  
 
 Training Steps
--  0.Edit Configs.
+- 0.Edit Configs.
 
 
  if change lora_r and alpha
@@ -39,11 +39,11 @@ lora_r: 8
 lora_alpha: 16
 lora_dropout: 0.01
 ```
- 1.train
+- 1.train
 ```sh
 python3 lightning_trainer.py fit -c config.yaml
 ```
- 2.merge
+- 2.merge
 ```sh
  python export_checkpoint_lora.py --checkpoint_dir %DEEPSPEED_CHECKPOINT_DIR% --output_file %LoRA_MERGED_Checkpoint_Dir% --base_model model/RWKV-5-World-3B-v2-20231113-ctx4096.pth --lora_alpha 32
 ```
