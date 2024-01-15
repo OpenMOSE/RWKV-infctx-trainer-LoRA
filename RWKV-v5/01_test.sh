@@ -10,5 +10,5 @@ python3 lightning_trainer.py fit -c sample_config.yaml
 
 #たぶんLoRAMergeしてくれるはず
 #LoRA Merge Command
-python export_checkpoint_lora.py --checkpoint_dir checkpoint/test-v12.ckpt/ --output_file testoutput.pth --base_model model/RWKV-5-World-3B-v2-20231113-ctx4096.pth --lora_alpha 32
+python export_checkpoint_lora.py --checkpoint_dir checkpoint/test-v12.ckpt/ --output_file testoutput.pth --base_model model/RWKV-5-World-3B-v2-20231113-ctx4096.pth --lora_alpha 16
 
