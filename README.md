@@ -4,6 +4,8 @@ This repo is forked from RWKV-infctx-trainer
 
 I added the LoRA training function to the original repository. 
 
+2023.01.16 Rocm5.6 HIP Ver Added.(tested on 2 x MI100)
+
 
 This is really experiment repo.
 
@@ -44,7 +46,7 @@ python3 lightning_trainer.py fit -c config.yaml
 ```
 - 2.merge
 ```sh
- python export_checkpoint_lora.py --checkpoint_dir %DEEPSPEED_CHECKPOINT_DIR% --output_file %LoRA_MERGED_Checkpoint_Dir% --base_model model/RWKV-5-World-3B-v2-20231113-ctx4096.pth --lora_alpha 32 --r 1 --k 1 --v 1
+ python export_checkpoint_lora.py --checkpoint_dir %DEEPSPEED_CHECKPOINT_DIR% --output_file %LoRA_MERGED_Checkpoint_Dir% --base_model model/RWKV-5-World-3B-v2-20231113-ctx4096.pth --lora_alpha 16 --r 1 --k 1 --v 1
 ```
 
 i tested it on RTX4090 Cuda12.2
