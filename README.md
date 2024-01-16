@@ -19,6 +19,8 @@ Examples of training commands can be found in 01-test.sh, so please make changes
 
 I'd be happy if I could improve it, whether it's a fork or a pull request.
 
+RWKV5-World 7b can be trained 16384ctx on Single 24GB GPU
+
 This repo works
 -  1.Add LoRA Layer to Receptance,Key,Value each att and ffn.
 -  2.Training with DeepSpeed
