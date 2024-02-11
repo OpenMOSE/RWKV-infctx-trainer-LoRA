@@ -1,10 +1,12 @@
 This repo is forked from RWKV-infctx-trainer
 
-# RWKV-5.2 Infctx LoRA Experiment Project RWKV-infctx-trainer-LoRA
+# RWKV-5.2 ,6.0 Infctx LoRA Experiment Project RWKV-infctx-trainer-LoRA
 
 I added the LoRA training function to the original repository. 
 
 2023.01.16 Rocm5.6 HIP Ver Added.(tested on 2 x MI100)
+
+2024.02.11 RWKV v6.0 test support. (without cuda kernel, 1.6b test)
 
 
 This is really experiment repo.
@@ -58,6 +60,7 @@ i tested it on RTX4090 Cuda12.2
 RWKV-LM @BlinkDL
 RWKV-LM-LoRA @Blealtan
 RWKV-infctx-trainer @ RWKV
+@SmerkyG
 
 
 # License
