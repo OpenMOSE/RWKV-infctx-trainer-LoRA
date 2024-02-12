@@ -99,9 +99,11 @@ model:
   ctx_len: 16384
   ctx_len_cutoffs: []
   ctx_len_warmup_steps: []
-  lora_r: 16.0
-  lora_alpha: 32.0
+  lora_r: 16.0 # LoRA Rank
+  lora_alpha: 32.0 #LoRA Alpha it must be double LoRA Rank
   lora_dropout: 0.01
+  head_learning: false #if true Enable Full-resolution Head Layer Learning 
+  gate_learning: false #if true Enable Full-resolution Gate Layer Learning
   lr_init: 1.0e-05
   lr_final: 1.0e-07
   lr_period: -1

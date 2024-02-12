@@ -6,7 +6,9 @@ I added the LoRA training function to the original repository.
 
 2023.01.16 Rocm5.6 HIP Ver Added.(tested on 2 x MI100)
 
-2024.02.11 RWKV v6.0 test support. (without cuda kernel, 1.6b test)
+2024.02.11 RWKV v6.0 test support. (without cuda kernel, 1.6b and 3b test)
+
+2024.02.13 Added Gate and Head Layer Training if enabled LoRA(r,k,v) + Full Resolution(Gate+Head)
 
 
 This is really experiment repo.

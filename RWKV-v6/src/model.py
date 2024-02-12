@@ -185,6 +185,9 @@ class RWKV(L.LightningModule):
                  lora_r: float = 16,
                  lora_alpha:float = 32,
                  lora_dropout:float = 0.01,
+
+                 head_learning: bool = False,
+                 gate_learning: bool = False,
                  # Learning rate schedule
                  # use only target_lr_init / lr_init
                  # to configure a constant learning rate
@@ -375,10 +378,16 @@ class RWKV(L.LightningModule):
                     #print(f'  LoRA additionally training module {name}')
                     for param in module.parameters():
                         param.requires_grad = False
+                        if head_learning == True:
+                            print('head learning enabled')
+                            param.requires_grad = True
             if 'gate' in name:
                     #print(f'  LoRA additionally training module {name}')
                     for param in module.parameters():
                         param.requires_grad = False
+                        if gate_learning == True:
+                            print('gate learning enabled')
+                            param.requires_grad = True
             if 'emb' in name:
                     #print(f'  LoRA additionally training module {name}')
                     for param in module.parameters():

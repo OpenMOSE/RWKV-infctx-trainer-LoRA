@@ -2,10 +2,10 @@
 
 # JSONL -> trainデータとvalidation用データセットが自動分割(0.01)される
 # JSONL make dataset train and validation
-python3 preload_datapath.py config.yaml
+python3 preload_datapath.py sample_config.yaml
 
 # Train
-python3 lightning_trainer.py fit -c config.yaml
+python3 lightning_trainer.py fit -c sample_config.yaml
 #
 
 #たぶんLoRAMergeしてくれるはず
