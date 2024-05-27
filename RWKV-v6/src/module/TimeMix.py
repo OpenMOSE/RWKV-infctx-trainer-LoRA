@@ -493,9 +493,13 @@ class RWKV_6_0_Upgraded_TimeMix(JITModClass):
             self.time_mix_g = nn.Parameter(torch.pow(ddd, 0.5 * ratio_1_to_almost0))
 
             TIME_MIX_EXTRA_DIM = 32
+            if self.n_embd==4096:
+                TIME_MIX_EXTRA_DIM = TIME_MIX_EXTRA_DIM*2
             self.time_maa_w1 = nn.Parameter(torch.empty(n_embd, TIME_MIX_EXTRA_DIM * 5).uniform_(-0.01, 0.01))
             self.time_maa_w2 = nn.Parameter(torch.zeros(5, TIME_MIX_EXTRA_DIM, n_embd))
             W_MIX_EXTRA_DIM = 64
+            if self.n_embd==4096:
+                W_MIX_EXTRA_DIM= W_MIX_EXTRA_DIM*2
             self.time_decay_w1 = nn.Parameter(torch.empty(n_embd, W_MIX_EXTRA_DIM).uniform_(-0.01, 0.01))
             self.time_decay_w2 = nn.Parameter(torch.zeros(W_MIX_EXTRA_DIM, n_embd))
 
@@ -646,11 +650,15 @@ class RWKV6_0_TimeMix(JITModClass):
             self.time_maa_v = nn.Parameter(1 - (torch.pow(ddd, ratio_1_to_almost0) + 0.3 * ratio_0_to_1))
             self.time_maa_g = nn.Parameter(1 - torch.pow(ddd, 0.5 * ratio_1_to_almost0))
             TIME_MIX_EXTRA_DIM = 32
+            if self.n_embd==4096:
+                TIME_MIX_EXTRA_DIM = TIME_MIX_EXTRA_DIM*2
             #self.time_maa_w1 = nn.Parameter(torch.empty(n_embd, TIME_MIX_EXTRA_DIM * 5).uniform_(-0.01, 0.01))
             #self.time_maa_w2 = nn.Parameter(torch.zeros(5, TIME_MIX_EXTRA_DIM, n_embd))
             self.time_maa_w1 = nn.Parameter(torch.empty(n_embd, TIME_MIX_EXTRA_DIM*5).uniform_(-0.01, 0.01))
             self.time_maa_w2 = nn.Parameter(torch.zeros(5, TIME_MIX_EXTRA_DIM, n_embd))
             W_MIX_EXTRA_DIM = 64
+            if self.n_embd==4096:
+                W_MIX_EXTRA_DIM= W_MIX_EXTRA_DIM*2
             #self.time_decay_w1 = nn.Parameter(torch.empty(n_embd, W_MIX_EXTRA_DIM).uniform_(-0.01, 0.01))
             #self.time_decay_w2 = nn.Parameter(torch.zeros(W_MIX_EXTRA_DIM, n_embd))
             self.time_decay_w1 = nn.Parameter(torch.empty(n_embd, W_MIX_EXTRA_DIM).uniform_(-0.01, 0.01))
@@ -803,12 +811,17 @@ class RWKV7_0_TimeMix(JITModClass):
             self.time_maa_v = nn.Parameter(1 - (torch.pow(ddd, ratio_1_to_almost0) + 0.3 * ratio_0_to_1))
             self.time_maa_g = nn.Parameter(1 - torch.pow(ddd, 0.5 * ratio_1_to_almost0))
             TIME_MIX_EXTRA_DIM = 32
+            if self.n_embd==4096:
+                TIME_MIX_EXTRA_DIM = TIME_MIX_EXTRA_DIM*2
             self.time_maa_w1 = nn.Parameter(torch.empty(n_embd, TIME_MIX_EXTRA_DIM * 5).uniform_(-0.01, 0.01))
             self.time_maa_w2 = nn.Parameter(torch.zeros(5, TIME_MIX_EXTRA_DIM, n_embd))
             W_MIX_EXTRA_DIM = 64
+            if self.n_embd==4096:
+                TIME_DECAY_EXTRA_DIM = TIME_DECAY_EXTRA_DIM*2
             self.time_decay_w1 = nn.Parameter(torch.empty(n_embd, W_MIX_EXTRA_DIM).uniform_(-0.01, 0.01))
             self.time_decay_w2 = nn.Parameter(torch.zeros(W_MIX_EXTRA_DIM, n_embd))
             D_GATE_LORA = 64
+
             self.time_gate_w1 = nn.Parameter(torch.empty(n_embd, D_GATE_LORA).uniform_(-0.01, 0.01))
             self.time_gate_w2 = nn.Parameter(torch.zeros(D_GATE_LORA, n_embd).uniform_(-0.01, 0.01))
 
