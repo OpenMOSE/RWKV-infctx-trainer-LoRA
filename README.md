@@ -3,12 +3,27 @@ This repo is forked from RWKV-infctx-trainer
 # RWKV-5.2 ,6.0 Infctx LoRA Experiment Project RWKV-infctx-trainer-LoRA
 
 I added the LoRA training function to the original repository. 
+## 2024.05.28 New Release on RWKV-v6-4bit folder
+   - Added a 4-bit quantization mode to Infctx-LoRA, enabling training of 14B models on Single 24GB GPU
+   - Now supports outputs for Emb, Head, and LoRA checkpoints only, freeing you from the cumbersome process of DeepSpeed conversion.
+   - Enabled CUDA Kernel for faster training.
+   - Added Output,Gate LoRA.
+   - for merging use this script.
+```sh
+python merge_lora.py <Alpha> <Base Model> <LORA Checkpoint> <Output FileName>
+```
+## 2024.02.13 Update
+   - Added Gate and Head Layer Training if enabled LoRA(r,k,v) + Full Resolution(Gate+Head)
+## 2024.02.11 Update
+   - RWKV v6.0 test support. (without cuda kernel, 1.6b and 3b test)
+## 2023.01.16 Update
+   - Rocm5.6 HIP Ver Added.(tested on 2 x MI100)
 
-2023.01.16 Rocm5.6 HIP Ver Added.(tested on 2 x MI100)
 
-2024.02.11 RWKV v6.0 test support. (without cuda kernel, 1.6b and 3b test)
 
-2024.02.13 Added Gate and Head Layer Training if enabled LoRA(r,k,v) + Full Resolution(Gate+Head)
+
+
+
 
 
 This is really experiment repo.
