@@ -20,9 +20,9 @@ class SaveElementWeightsCallback(lightning.pytorch.callbacks.callback.Callback):
         }
 
         # Print all keys in saved_weights
-        print("Keys of saved weights:")
-        for key in saved_weights.keys():
-            print(key)
+        #print("Keys of saved weights:")
+        #for key in saved_weights.keys():
+        #    print(key)
 
         # Ensure the directory exists
         os.makedirs(self.save_dir, exist_ok=True)  # Add this line
